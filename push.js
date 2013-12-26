@@ -3,8 +3,9 @@
  */
 
 var EXPRESS_PORT = 3000;
-var localhost = 'localhost';
-var port = 8000;
+var DJANGO_PORT = 8000;
+var LOCALHOST = 'localhost';
+
 var connections = {};
 var client_session = '';
 
@@ -69,8 +70,8 @@ console.log('Express is running on port ' + EXPRESS_PORT);
 function get_user(client_session, socket) {
 	//Get the user from this session_id
 	var options = {
-		host: localhost,
-		port: port,
+		host: LOCALHOST,
+		port: DJANGO_PORT,
 		path: '/validate-user?session_id=' + client_session
 	};
 
